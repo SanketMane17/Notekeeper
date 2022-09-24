@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <div className={isOpenPopup ? "overlay" : "App"} onClick={() => {
+      <div className={isOpenPopup ? "container" : ""} onClick={() => {
         if (isOpenPopup === true)
           setOpenPopup(false)
 

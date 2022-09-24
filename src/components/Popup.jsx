@@ -29,11 +29,17 @@ function Popup({ isOpenPopup, setOpenPopup, editNote, setEditNote, notes, setNot
         setOpenPopup(false);
     }
 
+    const handleKeyDown = (e) => {
+        e.target.style.height = 'inherit';
+        e.target.style.height = `${e.target.scrollHeight}px`;
+    }
+
     if (!isOpenPopup) return null;
     return (
         <div>
             <form className='popup-form' onClick={(e) => e.stopPropagation()}>
                 <input
+                    className="title"
                     value={editNote.title}
                     type="text"
                     placeholder="Title"
@@ -53,11 +59,11 @@ function Popup({ isOpenPopup, setOpenPopup, editNote, setEditNote, notes, setNot
                         name="content"
                         placeholder="Take a note..."
                         onChange={handleChange}
-                        rows={3}
+                        onFocus={handleKeyDown}
                     ></textarea>
                 </p>
                 <div>
-                    <button onClick={saveData}><AiOutlineCheck size={25} /></button>
+                    <button className={isOpenPopup ? "popup-open-btn" : ""} onClick={saveData}><AiOutlineCheck size={25} /></button>
                 </div>
             </form>
         </div>)

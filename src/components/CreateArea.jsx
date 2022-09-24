@@ -62,6 +62,7 @@ function CreateArea({ onAdd, note, setNote, isOpenPopup, isExpanded, setExpanded
                             type="text"
                             placeholder="Title"
                             name="title"
+                            className="title"
                             onChange={handleChange}
                         />
                         <input

@@ -8,6 +8,12 @@ html {
     font-family: "Google Sans", Roboto, Arial, sans-serif;
 }
 
+.container {
+    opacity: .5;
+    filter: blur(3x);
+    user-select: none;
+}
+
 .header {
     background-color: #ffffff;
     padding: 10px 20px;
@@ -37,6 +43,7 @@ html {
     padding: 7px;
     border-radius: 7px;
     box-shadow: 0 1px 7px rgb(128, 128, 128);
+    transition: 0.5s;
 }
 
 .input-form input {
@@ -46,7 +53,6 @@ html {
     outline: none;
     font-size: 1rem;
     resize: none;
-    font-weight: bold;
     color: #5f6368;
 }
 
@@ -81,6 +87,7 @@ html {
 .notes {
     display: flex;
     flex-wrap: wrap;
+    transition: 0.5s;
 }
 
 .note {
@@ -94,10 +101,12 @@ html {
     margin-right: 0;
     cursor: pointer;
     position: relative;
+    transition: 0.5s;
 }
 
 .note:hover {
     box-shadow: 0 2px 5px rgb(175, 175, 175);
+    transform: translate(1);
 }
 
 .note p {
@@ -109,7 +118,7 @@ html {
     padding-top: 12px;
 }
 
-.note .title {
+.title {
     font-weight: bold;
 }
 
@@ -150,13 +159,6 @@ html {
 
 /* Popup */
 
-.overlay {
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
 .popup-form {
     max-width: 600px;
     width: 100%;
@@ -167,10 +169,13 @@ html {
     display: flex;
     background-color: #ffffff;
     border-radius: 7px;
-    box-shadow: 0 1px 7px rgb(128, 128, 128);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
     display: flex;
     flex-direction: column;
     padding: 7px;
+    transition: 0.5s;
+    opacity: 1;
+    border: 1px solid #9d9d9dcc;
 }
 
 .popup-form input {
@@ -180,8 +185,7 @@ html {
     outline: none;
     font-size: 1rem;
     resize: none;
-    font-weight: bold;
-    color: #5f6368;
+    color: black;
 }
 
 
@@ -192,26 +196,43 @@ html {
     outline: none;
     font-size: 1rem;
     resize: none;
-    color: #5f6368;
+    color: black;
 }
 
 .popup-form button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 18px;
+    bottom: -18px;
     background: rgb(99 146 211);
     color: #fff;
     border: none;
-    width: 50px;
-    height: 30px;
-    box-shadow: 0 1px 3px rgb(165 165 165);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgb(165, 165, 165);
     cursor: pointer;
     outline: none;
-    margin: 2px 9px;
+}
+
+.popup-open-btn {
+    background: rgb(0 107 255) !important;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    margin-top: 200px;
+    margin-left: -250px;
 }
 
 .pagination-btn {
@@ -245,6 +266,13 @@ html {
 
     .popup-form {
         width: 80%;
+    }
+}
+
+@media (min-width : 650px) {
+    .notes {
+        justify-content: flex-start;
+        margin: 0 10rem;
     }
 }
 
