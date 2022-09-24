@@ -101,7 +101,7 @@ html {
     margin-right: 0;
     cursor: pointer;
     position: relative;
-    transition: 0.5s;
+    color: #5f6368;
 }
 
 .note:hover {
@@ -232,7 +232,7 @@ html {
     padding: 10px;
     top: 50%;
     left: 50%;
-    margin-top: 200px;
+    margin-top: 190px;
     margin-left: -250px;
 }
 
@@ -260,14 +260,14 @@ html {
     border: none;
 }
 
-@media (max-width: 980px) {
-    .input-form {
-        width: 80%;
-    }
+.pointer-event {
+    pointer-events: none;
+}
 
-    .popup-form {
-        width: 80%;
-    }
+.sections {
+    font-size: 18px;
+    margin-left: 178px;
+    color: #5f6368;
 }
 
 @media (min-width : 650px) {
@@ -277,18 +277,37 @@ html {
     }
 }
 
+
+
 @media (max-width: 425px) {
     .note {
         width: 185px;
     }
+
+    .note .pin {
+        right: 3px;
+        right: 3px;
+    }
 }
 
-.pointer-event {
-    pointer-events: none;
+@media (max-width: 405px) {
+    .note {
+        width: 90%;
+    }
 }
 
-.sections {
-    font-size: 18px;
-    margin-left: 18px;
-    color: #5f6368;
+@media (max-width: 650px) {
+    .sections {
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 980px) {
+    .input-form {
+        width: 80%;
+    }
+
+    .popup-form {
+        width: 80%;
+    }
 }
