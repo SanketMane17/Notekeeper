@@ -29,7 +29,7 @@ function Popup({ isOpenPopup, setOpenPopup, editNote, setEditNote, notes, setNot
         setOpenPopup(false);
     }
 
-    const handleKeyDown = (e) => {
+    const handleFocus = (e) => {
         e.target.style.height = 'inherit';
         e.target.style.height = `${e.target.scrollHeight}px`;
     }
@@ -59,7 +59,7 @@ function Popup({ isOpenPopup, setOpenPopup, editNote, setEditNote, notes, setNot
                         name="content"
                         placeholder="Take a note..."
                         onChange={handleChange}
-                        onFocus={handleKeyDown}
+                        onFocus={handleFocus}
                     ></textarea>
                 </p>
                 <div>
