@@ -152,9 +152,10 @@ html {
     display: flex;
     margin-top: 20px;
     align-items: center;
-    justify-content: center;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    color: #5f6368;
 }
 
 /* Popup */

@@ -5,6 +5,7 @@ import CreateArea from "./components/CreateArea";
 import Note from "./components/Note";
 import Popup from "./components/Popup";
 import Pagination from "./components/Pagination";
+import Count from "./components/Count";
 
 const notesPerPage = 6;
 
@@ -63,11 +64,12 @@ function App() {
 
   // Add data to localStorage
   useEffect(() => {
-      localStorage.setItem("notes", JSON.stringify(notes));
+    localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes])
 
   return (
     <>
+
       <div className={isOpenPopup ? "container" : ""} onClick={() => {
         if (isOpenPopup === true)
           setOpenPopup(false)
@@ -77,6 +79,7 @@ function App() {
       }
       }>
         <Header />
+        <Count count={notes.length}/>
         <CreateArea
           note={note}
           setNote={setNote}
